@@ -11,6 +11,7 @@ html = urllib2.urlopen(BASE_URL + "/v/iep3IFuD/file.html").read()
 match = re.search("getElementById\(\'dlbutton\'\)\.href = ([^;]*)", html)
 js = match.group(1).replace("(", "str(")
 url = BASE_URL + eval(js)
+print(url)
 with open("./original.tar.gz", 'wb') as output:
     req = urllib2.Request(url)
     opener = urllib2.build_opener()
