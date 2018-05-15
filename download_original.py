@@ -16,5 +16,3 @@ with open("./original.tar.gz", 'wb') as output:
     opener = urllib2.build_opener()
     bytes = opener.open(req).read()
     output.write(bytes)
-
-print url
